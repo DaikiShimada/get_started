@@ -4,6 +4,7 @@ channels:
   - conda-forge
   - defaults
 dependences:
+  - anaconda-client
   - pytorch=2.0.0
   - torchvision
   - torchaudio
