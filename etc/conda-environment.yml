@@ -6,6 +6,8 @@ channels:
 dependencies:
   - anaconda-client
   - pytorch=2.0.0
+  - torchvision
+  - torchaudio
   - pip
   - pip:
       - -r requirements.txt
