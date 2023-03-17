@@ -1,9 +1,11 @@
 name: anaconda-client-env
 channels:
   - conda-forge
+  - pytorch
   - defaults
 dependencies:
   - anaconda-client
+  - pytorch=2.0.0
   - pip
   - pip:
       - -r requirements.txt
