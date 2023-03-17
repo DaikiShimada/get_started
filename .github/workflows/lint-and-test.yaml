@@ -10,11 +10,18 @@ jobs:
         os: ["ubuntu-latest", "macos-latest"]
         python-versoin: ["3.9"]
     steps:
+      - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
-          auto-update-conda: true
           python-version: ${{ matrix.python-version }}
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: anaconda-client-env
+          environment-file: etc/conda-environment.yaml
       - name: Conda info
         shell: bash -el {0}
-        run: conda info
+        run: |
+          conda info
+          conda list
 

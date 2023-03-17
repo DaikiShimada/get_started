@@ -1,0 +1,9 @@
+name: anaconda-client-env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependences:
+  - pytorch=2.0.0
+  - torchvision
+  - torchaudio
