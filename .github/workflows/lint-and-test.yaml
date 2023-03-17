@@ -40,8 +40,9 @@ jobs:
           activate-environment: anaconda-client-env
           environment-file: etc/example-environment.yml
           python-version: ${{ matrix.python-version }}
-          condarc-file: etc/example-condarc.yml
           auto-activate-base: false
-      - run: |
+      - name: Conda info
+        shell: bash -el {0}
+        run: |
           conda info
           conda list
