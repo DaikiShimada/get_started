@@ -1,25 +1,42 @@
 name: tests
 on: [push]
 jobs:
-  example-1:
-    name: ${{ matrix.os }} / ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
-    strategy: 
-      fail-fast: false
-      matrix:
-        os: ["ubuntu-latest", "macos-latest"]
-        python-versoin: ["3.9"]
+  #example-1:
+  #  name: ${{ matrix.os }} / ${{ matrix.python-version }}
+  #  runs-on: ${{ matrix.os }}
+  #  strategy: 
+  #    fail-fast: false
+  #    matrix:
+  #      os: ["ubuntu-latest", "macos-latest"]
+  #      python-versoin: ["3.9"]
+  #  steps:
+  #    - uses: actions/checkout@v2
+  #    - uses: conda-incubator/setup-miniconda@v2
+  #      with:
+  #        python-version: ${{ matrix.python-version }}
+  #        activate-environment: anaconda-client-env
+  #        environment-file: etc/conda-environment.yaml
+  #        auto-activate-base: false
+  #    - name: Conda info
+  #      shell: bash -el {0}
+  #      run: |
+  #        conda info
+  #        conda list
+  example-3:
+    name: Ex3 Linux
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash -el {0}
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: ${{ matrix.python-version }}
           activate-environment: anaconda-client-env
-          environment-file: etc/conda-environment.yaml
+          environment-file: etc/example-environment.yml
+          python-version: 3.5
+          condarc-file: etc/example-condarc.yml
           auto-activate-base: false
-      - name: Conda info
-        shell: bash -el {0}
-        run: |
+      - run: |
           conda info
           conda list
-
