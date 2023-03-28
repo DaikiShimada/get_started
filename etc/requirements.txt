@@ -2,3 +2,6 @@ black
 isort
 flake8
 mypy
+pytest-cov
+pytorch
+numpy
