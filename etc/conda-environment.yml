@@ -5,7 +5,7 @@ channels:
   - defaults
 dependencies:
   - anaconda-client
-  - torch=2.0.0
+  - pytorch
   - torchvision
   - torchaudio
   - pip
